@@ -11,7 +11,7 @@
     
     jpa:
       hibernate:
-        ddl-auto: update
+        ddl-auto: create
       show-sql: true
       properties:
         hibernate:
@@ -23,3 +23,12 @@
         schema-locations:
           - 'classpath:init.sql'
         continue-on-error: true
+
+  eureka:
+    instance:
+      prefer-ip-address: true
+    client:
+      fetch-registry: true
+      register-with-eureka: true
+      service-url:
+        defaultZone: http://localhost:9094/eureka
